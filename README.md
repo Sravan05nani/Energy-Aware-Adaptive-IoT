@@ -366,8 +366,6 @@ The interactive dashboard has been tested locally in Google Colab and publicly d
 
 The source code and supporting project files are available in the GitHub repository.
 
-The final project report and presentation remain in progress.
-
 Physical ESP32 validation and hardware-level energy measurements are considered possible future extensions.
 
 ---

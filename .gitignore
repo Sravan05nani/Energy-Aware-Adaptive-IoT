@@ -221,3 +221,20 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# Large intermediate datasets (keep prepared lightweight datasets)
+datasets/intel_evaluation_dataset.csv
+datasets/intel_selected_raw.csv
+datasets/intel_selected_clean.csv
+intel_selected_raw.csv
+intel_selected_clean.csv
+intel_data.txt
+intel_data.txt.gz
+
+# Large generated experiment exports
+results/metrics/
+results/transmissions/
+
+# Dashboard development backups
+dashboard/backups/

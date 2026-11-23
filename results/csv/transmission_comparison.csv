@@ -1,0 +1,6 @@
+Algorithm,Eligible_Records,Transmissions,Skipped_Records,Transmission_Reduction_Percent
+Fixed,209275,89935,119340,57.03
+Rate,209275,75807,133468,63.78
+Threshold,209275,41750,167525,80.05
+Threshold-H120,209275,70016,139259,66.54
+Threshold-H180,209275,58327,150948,72.13

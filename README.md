@@ -4,9 +4,9 @@ overhead through adaptive sampling while balancing measurement
 reconstruction accuracy and data freshness.
 Current implementation status: Offline simulation and evaluation
 using historical measurements from the Intel Berkeley Research Lab
-wireless sensor network dataset. The interactive dashboard and
-historical playback interface are planned next. This is not a live
-physical sensor deployment.
+wireless sensor network dataset. An interactive dashboard with
+historical data playback has been implemented and validated locally
+in Google Colab. This is not a live physical sensor deployment.
 
 1. Project overview
 Wireless sensor nodes often transmit measurements at fixed intervals,
@@ -39,8 +39,8 @@ network dataset, collected from a physical deployment in 2004.
 - Evaluation records: 210,598
 - Eligible environmental observations: 209,275
 The dataset contains historical temperature, humidity, light and voltage
-measurements. The dashboard, when implemented, will replay these
-historical observations. It must not be described as live sensing.
+measurements. The dashboard replays these historical observations. It must not
+be described as live sensing.
 Data preparation
 - The selected five nodes were restricted to a common observation
   period.
@@ -72,7 +72,7 @@ flowchart TD
     G --> J[Comparative results]
     H --> J
     I --> J
-    J --> K[Planned historical playback dashboard]
+    J --> K[Interactive historical playback dashboard]
 ```
 4. Experimental results
 All results below are from the Intel dataset evaluation period. The
@@ -165,16 +165,21 @@ maximum freshness age.
 Energy-Aware-Adaptive-IoT/
 ├── README.md
 ├── requirements.txt
+├── algorithm_configuration.json
+├── experiment_summary.json
 ├── notebooks/
 │   └── energy_aware_simulation.ipynb
 ├── datasets/
+│   ├── ground_truth.csv
+│   └── sensor_measurements.csv
+├── dashboard/
+│   └── app.py
+├── dashboard_data/
 ├── src/
-├── results/
-│   ├── csv/
-│   └── graphs/
-└── docs/
-    ├── architecture/
-    └── report/
+│   └── dashboard_engine.py
+└── results/
+    ├── configuration/
+    └── csv/
 Large raw datasets and bulky reconstruction exports are maintained in
 Google Drive rather than committed to GitHub. The repository should
 contain source code, notebook, lightweight result summaries,
@@ -189,13 +194,22 @@ The current experiment notebook is designed for Google Colab.
    evaluation period.
 5. Review the assumptions and limitations before interpreting the
    energy results.
-Python packages used include:
-- Python 3
-- pandas
-- NumPy
-- Matplotlib
-A requirements.txt file will be maintained as the project environment
-is finalized.
+Python 3 and the packages listed in requirements.txt are required.
+
+To run the dashboard from the repository root:
+
+```bash
+pip install -r requirements.txt
+streamlit run dashboard/app.py
+```
+
+The dashboard uses the prepared files in dashboard_data/. These files
+are included in the repository.
+
+The experiment notebook is a development notebook containing
+historical experiments and intermediate cells. It should not be
+assumed to execute cleanly from the first cell without the required
+dataset preparation and runtime setup.
 9. Roadmap
 - [x] Acquire and inspect the Intel Berkeley sensor dataset.
 - [x] Select five nodes and prepare a common evaluation period.
@@ -206,15 +220,16 @@ is finalized.
 - [x] Evaluate transmission reduction, reconstruction accuracy and
   freshness.
 - [x] Implement an explicitly assumption-based energy comparison.
-- [ ] Build an interactive monitoring dashboard.
-- [ ] Integrate historical dataset playback controls.
-- [ ] Test dashboard metrics against exported experiment results.
+- [x] Build an interactive monitoring dashboard.
+- [x] Integrate historical dataset playback controls.
+- [x] Validate dashboard operation locally in Google Colab.
 - [ ] Complete final project report, architecture diagrams and
   presentation.
 - [ ] Consider physical ESP32 validation as a separate extension.
 10. Project status
-The algorithm simulation and offline evaluation are complete. The
-interactive dashboard, playback integration, final report and
+The algorithm simulation, offline evaluation and interactive
+historical playback dashboard are implemented. The dashboard has been
+validated locally in Google Colab. The final project report and
 presentation remain in progress.
 
 The project is an experimental software evaluation of energy-aware

@@ -1,0 +1,19 @@
+{
+  "project": "Adaptive IoT",
+  "dataset_records": 272278,
+  "evaluation_records": 210598,
+  "eligible_evaluation_records": 209275,
+  "selected_nodes": [
+    22,
+    31,
+    45,
+    47,
+    48
+  ],
+  "algorithms_evaluated": 5,
+  "recommended_algorithm": "THRESHOLD-H120",
+  "dashboard_status": "Validated locally in Google Colab",
+  "energy_model_type": "Illustrative model-based estimate",
+  "dataset_mode": "Historical public dataset replay",
+  "physical_live_sensing": false
+}

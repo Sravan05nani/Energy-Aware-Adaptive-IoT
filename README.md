@@ -355,10 +355,6 @@ The dashboard is a historical data visualization and simulation interface, not a
 - [x] Validate dashboard operation locally in Google Colab.
 - [x] Publish the project repository on GitHub.
 - [x] Deploy the interactive dashboard using Streamlit Community Cloud.
-- [ ] Complete final project report.
-- [ ] Prepare system architecture diagrams.
-- [ ] Prepare final project presentation.
-- [ ] Consider physical ESP32 validation as a separate extension.
 
 ## 12. Project Status
 
